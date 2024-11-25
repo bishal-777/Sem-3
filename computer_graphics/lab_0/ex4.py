@@ -1,5 +1,5 @@
 '''WAP to take input coordinate and angle and
-rotate bout origin by angle'''
+rotate about origin by angle'''
 import math
 
 def rotate(x,y,theta):
