@@ -24,7 +24,7 @@ def dda_line(x1,y1,x2,y2):
     x,y=x1,y1
 
     for _ in range(steps):
-        pygame.draw.circle(screen,black,(round(x),round(y)),1)#(surface,color,centre_of_circle,ra)
+        pygame.draw.circle(screen,black,(round(x),round(y)),1)#(surface,color,centre_of_circle,radius)
         x+=x_inc
         y+=y_inc
 
