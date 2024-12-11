@@ -34,7 +34,7 @@ def draw_line_bresenham(x1, y1, x2, y2):
 
     if dx>dy:
         p=2*dy-dx
-        
+
         while(x!=x2):
            if p<0:
                x+=lx
@@ -70,8 +70,21 @@ def main():
         # Clear the screen
         screen.fill(BLACK)
 
-        # Drawing a line using bresenham's line algorithm
-        draw_line_bresenham(200,100,900,200)
+        # Drawing a temple using using bresenham's line algorithm
+        draw_line_bresenham(20,10 ,10, 20)
+        draw_line_bresenham(20,10 ,30, 20)
+        draw_line_bresenham(10,20 ,30, 20)
+        draw_line_bresenham(10,20 ,10, 50)
+        draw_line_bresenham(10,50 ,30, 50)
+        draw_line_bresenham(30,20 ,30, 50)
+        draw_line_bresenham(30,35 ,50, 35)
+        draw_line_bresenham(30,50 ,50, 50)
+        draw_line_bresenham(50,20 ,50, 50)
+        draw_line_bresenham(50,50 ,70, 50)
+        draw_line_bresenham(70,50 ,70, 20)
+        draw_line_bresenham(50,20 ,70, 20)
+        draw_line_bresenham(50,20 ,60, 10)
+        draw_line_bresenham(60,10 ,70, 20)
 
         # Update the display
         pygame.display.flip()
