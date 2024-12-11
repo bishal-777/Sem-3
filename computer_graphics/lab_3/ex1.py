@@ -8,26 +8,59 @@ pygame.init()
 # Set up the display
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("DDA Line Drawing Algorithm")
+pygame.display.set_caption("Bresenham's Line Drawing Algorithm")
 
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-# Function to draw a line using DDA algorithm
-def draw_line_dda(x1, y1, x2, y2):
-    dx = x2 - x1
-    dy = y2 - y1
-    steps = max(abs(dx), abs(dy))
-    x_increment = dx / steps
-    y_increment = dy / steps
-    x = x1
-    y = y1
-    for i in range(steps):
-        screen.set_at((round(x), round(y)), WHITE)
-        x += x_increment
-        y += y_increment
-      
+# Function to draw a line using Bresenham's line algorithm
+def draw_line_bresenham(x1, y1, x2, y2):
+
+    if x2>x1:
+        lx=1
+    else:
+        lx=-1
+        
+    if y2>y1:
+        ly=1
+    else:
+        ly=-1
+
+    x,y=x1,y1
+
+    dx=abs(x2-x1)
+    dy=abs(y2-y1)
+
+    if dx>dy:
+        p=2*dy-dx
+
+        while(x!=x2):
+           if p<0:
+               x+=lx
+               p+=2*dy
+           else:
+                x+=lx
+                y+=ly
+                p+=2*dy-2*dx
+
+                screen.set_at((x,y),WHITE)
+
+    else:
+        p=2*dx-dy
+
+        while(y!=y2):
+           if p<0:
+               y+=ly
+           else:
+                x+=lx
+                y+=ly
+
+                screen.set_at((x,y),WHITE)
+
+
+
+
 
 # Main loop
 def main():
@@ -41,7 +74,7 @@ def main():
         screen.fill(BLACK)
 
         # Draw a line using DDA algorithm
-        draw_line_dda(20,20 , 100, 100)
+        draw_line_bresenham(90,7,500,700)
 
         # Update the display
         pygame.display.flip()
