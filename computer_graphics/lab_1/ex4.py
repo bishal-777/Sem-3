@@ -15,3 +15,10 @@ theta=int(input("Enter angle:"))
 x2,y2=rotate(x1,y1,theta)
 
 print(f"New coordinates:({x2},{y2})")
+
+
+
+
+
+   
+   
