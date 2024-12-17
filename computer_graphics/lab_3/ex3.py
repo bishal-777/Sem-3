@@ -8,7 +8,7 @@ pygame.init()
 # Set up the display
 WIDTH, HEIGHT = 1200, 1080
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Bresenham's Line Drawing Algorithm")
+pygame.display.set_caption("Open Square Based Pyramid")
 
 # Colors
 WHITE = (255, 255, 255)
@@ -69,21 +69,24 @@ def main():
 
         # Clear the screen
         screen.fill(BLACK)
-
-        # Drawing a temple using using bresenham's line algorithm
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        draw_line_bresenham()
-        
+        #Drawing open square based pyramid
+        #Square 
+        draw_line_bresenham(400,400,800,400)
+        draw_line_bresenham(400,400,400,800)
+        draw_line_bresenham(400,800,800,800)
+        draw_line_bresenham(800,800,800,400)
+        #top edge
+        draw_line_bresenham(400,400,600,200)
+        draw_line_bresenham(600,200,800,400)
+        #right edge
+        draw_line_bresenham(800,400,1000,600)
+        draw_line_bresenham(1000,600,800,800)
+        #bottom edge
+        draw_line_bresenham(800,800,600,1000)
+        draw_line_bresenham(600,1000,400,800)
+        #left edge
+        draw_line_bresenham(400,800,200,600)
+        draw_line_bresenham(200,600,400,400)
 
         # Update the display
         pygame.display.flip()

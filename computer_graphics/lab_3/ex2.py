@@ -1,4 +1,3 @@
-
 import pygame
 import sys
 
@@ -8,7 +7,7 @@ pygame.init()
 # Set up the display
 WIDTH, HEIGHT = 1200, 1080
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Bresenham's Line Drawing Algorithm")
+pygame.display.set_caption("Temple")
 
 # Colors
 WHITE = (255, 255, 255)
@@ -71,20 +70,20 @@ def main():
         screen.fill(BLACK)
 
         # Drawing a temple using using bresenham's line algorithm
-        draw_line_bresenham(20,10 ,10, 20)
-        draw_line_bresenham(20,10 ,30, 20)
-        draw_line_bresenham(10,20 ,30, 20)
-        draw_line_bresenham(10,20 ,10, 50)
-        draw_line_bresenham(10,50 ,30, 50)
-        draw_line_bresenham(30,20 ,30, 50)
-        draw_line_bresenham(30,35 ,50, 35)
-        draw_line_bresenham(30,50 ,50, 50)
-        draw_line_bresenham(50,20 ,50, 50)
-        draw_line_bresenham(50,50 ,70, 50)
-        draw_line_bresenham(70,50 ,70, 20)
-        draw_line_bresenham(50,20 ,70, 20)
-        draw_line_bresenham(50,20 ,60, 10)
-        draw_line_bresenham(60,10 ,70, 20)
+        draw_line_bresenham(200,100 ,100, 200)
+        draw_line_bresenham(200,100 ,300, 200)
+        draw_line_bresenham(100,200 ,300, 200)
+        draw_line_bresenham(100,200 ,100, 500)
+        draw_line_bresenham(100,500 ,300, 500)
+        draw_line_bresenham(300,200 ,300, 500)
+        draw_line_bresenham(300,350 ,500, 350)
+        draw_line_bresenham(300,500 ,500, 500)
+        draw_line_bresenham(500,200 ,500, 500)
+        draw_line_bresenham(500,500 ,700, 500)
+        draw_line_bresenham(700,500 ,700, 200)
+        draw_line_bresenham(500,200,700, 200)
+        draw_line_bresenham(500,200,600, 100)
+        draw_line_bresenham(600,100 ,700, 200)
 
         # Update the display
         pygame.display.flip()
