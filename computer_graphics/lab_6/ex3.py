@@ -1,4 +1,5 @@
 import pygame
+import math as m
 import sys
 
 # Initialize Pygame
@@ -7,33 +8,23 @@ pygame.init()
 # Set up the display
 WIDTH, HEIGHT = 1200, 1080
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Translation")
+pygame.display.set_caption("Rotation")
 
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-
+RED =(255,0,0)
 # Function 
-def line(x1,y1,x2,y2,tx,ty):
-    dx=x2-x1
-    dy=y2-y1
+def line(x1,y1,x2,y2,theta):
+        theta*=(3.14/180)
+        xr1=int(x1*m.cos(theta)-y1*m.sin(theta))
+        yr1=int(x1*m.sin(theta)+y1*m.cos(theta))
+        xr2=int(x2*m.cos(theta)-y2*m.sin(theta))
+        yr2=int(x2*m.sin(theta)+y2*m.cos(theta))
 
-    if abs(dx)>abs(dy):
-        steps=abs(dx)
-    else:
-        steps=abs(dy)
-
-    x_inc=dx/steps
-    y_inc=dy/steps
-
-    x,y=x1,y1
-
-    for _ in range(steps):
-        pygame.draw.circle(screen,WHITE,(round(x),round(y)),1)#(surface,color,centre_of_circle,radius)
-        pygame.draw.circle(screen,WHITE,(round(x+tx),round(y+ty)),1)
-        x+=x_inc
-        y+=y_inc
-   
+        pygame.draw.line(screen, WHITE,(x1,y1),(x2,y2),2)
+        pygame.draw.line(screen, RED,(xr1,yr1),(xr2,yr2),2)
+        
 
 
 
@@ -49,7 +40,7 @@ def main():
         # Clear the screen
         screen.fill(BLACK)
         #function call
-        line(100,100,700,500,300,400)# tx,ty=200,300
+        line(100,100,100,800,-60)# theta=-60
 
         # Update the display
         pygame.display.flip()
