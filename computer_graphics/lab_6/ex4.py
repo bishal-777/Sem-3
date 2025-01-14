@@ -1,5 +1,4 @@
 import pygame
-import math as m
 import sys
 
 # Initialize Pygame
@@ -17,10 +16,7 @@ RED =(255,0,0)
 BLUE=(0,0,255)
 # Function 
 def cycle(tx):
-    #i=0
-    #for i in range (WIDTH):
-       
-     #road
+    #road
     pygame.draw.line(screen, BLACK,(0,1000),(1600,1000),2)
     #wheels of cycle
     pygame.draw.circle(screen, BLACK,(100+tx,950),50)
