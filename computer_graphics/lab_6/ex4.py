@@ -18,10 +18,10 @@ BLUE=(0,0,255)
 # Function 
 def cycle(x):
        #road
-       pygame.draw.line(screen, WHITE,(0,1000),(1600,1000),2)
+       pygame.draw.line(screen, BLACK,(0,1000),(1600,1000),2)
        #wheels of cycle
-       pygame.draw.circle(screen, WHITE,(100,950),50)
-       pygame.draw.circle(screen, WHITE,(300,950),50)
+       pygame.draw.circle(screen, BLACK,(100,950),50)
+       pygame.draw.circle(screen, BLACK,(300,950),50)
        #Chasis frame of cycle
        pygame.draw.line(screen, RED,(100,950),(200,950),7)
        pygame.draw.line(screen, RED,(100,950),(150,850),7)
@@ -45,7 +45,7 @@ def main():
                 sys.exit()
 
         # Clear the screen
-        screen.fill(BLACK)
+        screen.fill(WHITE)
         #function call
         cycle(5)
         # Update the display

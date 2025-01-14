@@ -13,7 +13,6 @@ pygame.display.set_caption("Rotation")
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-RED =(255,0,0)
 # Function 
 def line(x1,y1,x2,y2,theta):
         theta*=(3.14/180)
@@ -22,8 +21,8 @@ def line(x1,y1,x2,y2,theta):
         xr2=int(x2*m.cos(theta)-y2*m.sin(theta))
         yr2=int(x2*m.sin(theta)+y2*m.cos(theta))
 
-        pygame.draw.line(screen, WHITE,(x1,y1),(x2,y2),2)
-        pygame.draw.line(screen, RED,(xr1,yr1),(xr2,yr2),2)
+        pygame.draw.line(screen,WHITE,(x1,y1),(x2,y2),2)
+        pygame.draw.line(screen,WHITE,(xr1,yr1),(xr2,yr2),2)
         
 
 
